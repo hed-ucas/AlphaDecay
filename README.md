@@ -8,6 +8,23 @@ AlphaDecay determines the weight decay parameter values of each module in LLM tr
   <img src="./images/AlphaDecay.png" alt="Image 2" style="width: 900px; margin: 0 auto;">
 </div>
 
+
+
+## Table of contents
+
+* [Abstract](#abstract)
+
+
+* [Results](#Results)
+
+* [Installation](#installation)
+
+* [Usage](#Usage)
+
+
+## TL;DR
+We propose AlphaDecay, an adaptive weight decay strategy that assigns module-wise decay strengths according to the spectral characteristics of each module in LLMs, leading to improved perplexity and generalization compared to uniform and existing adaptive decay methods.
+
 ## Abstract
 
 Weight decay is a standard regularization technique for training large language models (LLMs).  While it is common to assign a uniform decay rate to every layer, this approach overlooks the structural diversity of LLMs and the varying spectral properties across modules. In this paper, we introduce AlphaDecay, a simple yet effective method that adaptively assigns different weight decay strengths to each module of an LLM.  Our approach is guided by Heavy-Tailed Self-Regularization (HT-SR) theory, which analyzes the empirical spectral density (ESD) of weight correlation matrices to quantify "heavy-tailedness."  Modules exhibiting more pronounced heavy-tailed ESDs, reflecting stronger feature learning, are assigned weaker decay, while modules with lighter-tailed spectra receive stronger decay.  Our method leverages tailored weight decay assignments to balance the module-wise differences in spectral properties, leading to improved performance.  Extensive pre-training tasks with various model sizes from 60M to 1B demonstrate that AlphaDecay achieves better perplexity and generalization than conventional uniform decay and other adaptive decay baselines. 
@@ -25,7 +42,7 @@ Weight decay is a standard regularization technique for training large language 
 | `Uniform`               | 32.39         | 32.56   | 33.03   | 22.99          | 23.14   | 24.14   | 17.12          | 16.74   | 17.50   | 15.36          | 14.66   | 15.03   |
 | `AWD` [1]               | 33.78         | 33.74   | 33.74   | 24.25          | 24.45   | 24.53   | 18.32          | 18.55   | 18.79   | 16.03          | 16.22   | 16.38   |
 | `Adadecay` [2]          | 32.24         | 32.52   | 33.03   | 23.20          | 23.08   | 23.96   | 18.21          | 17.42   | 17.91   | 17.23          | 18.14   | 15.35   |
-| **{\method}**           | **31.56**     | **31.58**| **32.61** | **22.76**     | **22.55**| **23.49**| **17.00**    | **16.66**| **16.88**| **15.13**    | **14.55**| **14.63**|
+| `AlphaDecay`           | **31.56**     | **31.58**| **32.61** | **22.76**     | **22.55**| **23.49**| **17.00**    | **16.66**| **16.88**| **15.13**    | **14.55**| **14.63**|
 
 - [1] AWD: Ghiasi et al., 2023 ([arxiv link](https://arxiv.org/abs/2210.00094))
 - [2] Adadecay: Nakamura et al., 2019 ([arxiv link](https://arxiv.org/pdf/1907.08931))
@@ -39,7 +56,7 @@ Weight decay is a standard regularization technique for training large language 
 | `Uniform`          | 31.95         | 32.31    | 32.66    | 23.32          | 23.81    | 24.28    |
 | `AWD`              | 32.58         | 32.67    | 32.67    | 24.30          | 24.35    | 24.41    |
 | `Adadecay`         | 31.88         | 32.25    | 32.58    | 23.18          | 23.62    | 24.21    |
-| **`AlphaDecay`**   | **31.20**     | **31.65**| **32.45**| **22.66**      | **23.04**| **23.98**|
+| `AlphaDecay`   | **31.20**     | **31.65**| **32.45**| **22.66**      | **23.04**| **23.98**|
 
 
 > **(ViT Evaluation.)** Comparison of various weight decay scheduling strategies using the Adam optimizer for training ViT-tiny on ImageNet-1K under different weight decay values. Top-1 accuracy ($\%$) is reported on the ImageNet-1K validation set. All baselines are carefully tuned.
@@ -52,7 +69,7 @@ Weight decay is a standard regularization technique for training large language 
 
 
 
-## Quick Start
+## Installation
 
 ### Setup
 
@@ -66,6 +83,8 @@ conda install -r requirements
 ### Prepare Dataset
 
 We utilized the publicly available C4 dataset and ImageNet-1K dataset, both of which can be accessed and downloaded from their respective official websites.
+
+## Usage
 
 #### Pretraining LLama-130M on C4
 ```bash

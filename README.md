@@ -1,6 +1,6 @@
 # [AlphaDecay: Module-wise Weight Decay for Heavy-Tailed Balancing in LLMs](https://export.arxiv.org/abs/2506.14562)
 
-This repo contains the pre-release version of AlphaDecay algorithm, proposed by [AlphaDecay: Module-wise Weight Decay for Heavy-Tailed Balancing in LLMs](https://export.arxiv.org/abs/2506.14562).  
+This repo contains the pre-release version of the [AlphaDecay](https://export.arxiv.org/abs/2506.14562).  
 
 AlphaDecay determines the weight decay parameter values of each module in LLM training through the spectral characteristics of the ESD distribution and makes dynamic adjustments during the training process, thereby improving the training performance of the model.
 
@@ -25,7 +25,7 @@ Weight decay is a standard regularization technique for training large language 
 | `Uniform`               | 32.39         | 32.56   | 33.03   | 22.99          | 23.14   | 24.14   | 17.12          | 16.74   | 17.50   | 15.36          | 14.66   | 15.03   |
 | `AWD` [1]               | 33.78         | 33.74   | 33.74   | 24.25          | 24.45   | 24.53   | 18.32          | 18.55   | 18.79   | 16.03          | 16.22   | 16.38   |
 | `Adadecay` [2]          | 32.24         | 32.52   | 33.03   | 23.20          | 23.08   | 23.96   | 18.21          | 17.42   | 17.91   | 17.23          | 18.14   | 15.35   |
-| **{\method}**           | **31.56**     | **31.58**| **32.61** | **22.76**     | **22.55**| **23.49**| **17.00**    | **16.66**| **16.88**| **15.13**    | **14.55**| **14.63**|
+| **`AlphaDecay`**          | **31.56**     | **31.58**| **32.61** | **22.76**     | **22.55**| **23.49**| **17.00**    | **16.66**| **16.88**| **15.13**    | **14.55**| **14.63**|
 
 - [1] AWD: Ghiasi et al., 2023 ([arxiv link](https://arxiv.org/abs/2210.00094))
 - [2] Adadecay: Nakamura et al., 2019 ([arxiv link](https://arxiv.org/pdf/1907.08931))
@@ -63,9 +63,13 @@ conda activate alphadecay
 conda install -r requirements
 ```
 
-### Prepare Dataset
 
-We utilized the publicly available C4 dataset and ImageNet-1K dataset, both of which can be accessed and downloaded from their respective official websites.
+
+
+### Usage
+
+
+We utilized the publicly available C4 dataset and ImageNet-1K dataset, both of which can be accessed and downloaded from their respective official websites
 
 #### Pretraining LLama-130M on C4
 ```bash

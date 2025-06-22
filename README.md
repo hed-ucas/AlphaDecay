@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 # [AlphaDecay: Module-wise Weight Decay for Heavy-Tailed Balancing in LLMs](https://export.arxiv.org/abs/2506.14562)
 
 This repo contains the pre-release version of AlphaDecay algorithm, proposed by [AlphaDecay: Module-wise Weight Decay for Heavy-Tailed Balancing in LLMs](https://export.arxiv.org/abs/2506.14562).  
-=======
-# AlphaDecay
-
-This repo contains the pre-release version of AlphaDecay algorithm, proposed by [AlphaDecay: Module-wise Weight Decay for Heavy-Tailed Balancing in LLMs].
->>>>>>> 439de4421cf392c625367b2187f5a987b7bc067f
 
 AlphaDecay determines the weight decay parameter values of each module in LLM training through the spectral characteristics of the ESD distribution and makes dynamic adjustments during the training process, thereby improving the training performance of the model.
 
@@ -16,9 +10,8 @@ AlphaDecay determines the weight decay parameter values of each module in LLM tr
 
 ## Abstract
 
-Weight decay is a standard regularization technique for training large language models (LLMs).  While it is common to assign a uniform decay rate to every layer, this approach overlooks the structural diversity of LLMs and the varying spectral properties across modules. In this paper, we introduce AlphaDecay, a simple yet effective method that adaptively assigns different weight decay strengths to each module of an LLM.  Our approach is guided by Heavy-Tailed Self-Regularization (HT-SR) theory, which analyzes the empirical spectral density (ESD) of weight correlation matrices to quantify “heavy-tailedness.”  Modules exhibiting more pronounced heavy-tailed ESDs, reflecting stronger feature learning, are assigned weaker decay, while modules with lighter-tailed spectra receive stronger decay.  Our method leverages tailored weight decay assignments to balance the module-wise differences in spectral properties, leading to improved performance.  Extensive pre-training tasks with various model sizes from 60M to 1B demonstrate that AlphaDecay achieves better perplexity and generalization than conventional uniform decay and other adaptive decay baselines. 
+Weight decay is a standard regularization technique for training large language models (LLMs).  While it is common to assign a uniform decay rate to every layer, this approach overlooks the structural diversity of LLMs and the varying spectral properties across modules. In this paper, we introduce AlphaDecay, a simple yet effective method that adaptively assigns different weight decay strengths to each module of an LLM.  Our approach is guided by Heavy-Tailed Self-Regularization (HT-SR) theory, which analyzes the empirical spectral density (ESD) of weight correlation matrices to quantify "heavy-tailedness."  Modules exhibiting more pronounced heavy-tailed ESDs, reflecting stronger feature learning, are assigned weaker decay, while modules with lighter-tailed spectra receive stronger decay.  Our method leverages tailored weight decay assignments to balance the module-wise differences in spectral properties, leading to improved performance.  Extensive pre-training tasks with various model sizes from 60M to 1B demonstrate that AlphaDecay achieves better perplexity and generalization than conventional uniform decay and other adaptive decay baselines. 
 
-<<<<<<< HEAD
 
 ## Results 
 
@@ -59,8 +52,6 @@ Weight decay is a standard regularization technique for training large language 
 
 
 
-=======
->>>>>>> 439de4421cf392c625367b2187f5a987b7bc067f
 ## Quick Start
 
 ### Setup
@@ -127,7 +118,6 @@ torchrun --nproc_per_node=2 --master_port=20023 --master_addr=localhost main.py 
 ### Acknowledgement
 This repository is build upon the [Galore](https://github.com/jiaweizzhao/GaLore) and [ConvNeXt](https://github.com/jiaweizzhao/GaLore) repositories. Thanks for their great work!
 
-<<<<<<< HEAD
 ## Citation
 if you find this repo is helpful, please cite
 
@@ -139,5 +129,3 @@ if you find this repo is helpful, please cite
   year={2025}
 }
 ```
-=======
->>>>>>> 439de4421cf392c625367b2187f5a987b7bc067f

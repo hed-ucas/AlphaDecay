@@ -63,7 +63,7 @@ Weight decay is a standard regularization technique for training large language 
 
 | Weight Decay | `Uniform` | `AWD`  | `AdaDecay` | `AlphaDecay` |
 |:------------:|:---------:|:------:|:----------:|:------------:|
-| 0            | \multicolumn{4}{c}{65.12}         |
+| 0            | 65.12         |
 | 5e-6         | 66.97     | 65.21  | 65.86      | **67.40**    |
 | 1e-6         | 66.41     | 64.98  | 66.26      | **67.73**    |
 

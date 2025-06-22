@@ -5,7 +5,7 @@ This repo contains the pre-release version of AlphaDecay algorithm, proposed by 
 AlphaDecay determines the weight decay parameter values of each module in LLM training through the spectral characteristics of the ESD distribution and makes dynamic adjustments during the training process, thereby improving the training performance of the model.
 
 <div align="center">
-  <img src="./images/AlphaDecay.png" alt="Image 2" style="width: 900px; margin: 0 auto;">
+  <img src="./images/AlphaDecay.png" alt="Image 2" style="width: 600px; margin: 0 auto;">
 </div>
 
 

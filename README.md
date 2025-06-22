@@ -1,6 +1,6 @@
 # [AlphaDecay: Module-wise Weight Decay for Heavy-Tailed Balancing in LLMs](https://export.arxiv.org/abs/2506.14562)
 
-This repo contains the pre-release version of AlphaDecay algorithm, proposed by [AlphaDecay: Module-wise Weight Decay for Heavy-Tailed Balancing in LLMs](https://export.arxiv.org/abs/2506.14562).  
+This repo contains the pre-release version of [AlphaDecay](https://export.arxiv.org/abs/2506.14562).  
 
 AlphaDecay determines the weight decay parameter values of each module in LLM training through the spectral characteristics of the ESD distribution and makes dynamic adjustments during the training process, thereby improving the training performance of the model.
 
